@@ -12,7 +12,7 @@ import java.util.Random;
  */
 public class Board implements Iterable<Tile> {
     /** Current contents of the board. */
-    private Tile[][] values;
+    private Tile[][] values;//二维对象数组,存着所有tile对象
     /** Side that the board currently views as north. */
     private Side viewPerspective;
 
@@ -25,6 +25,7 @@ public class Board implements Iterable<Tile> {
     public void setViewingPerspective(Side s) {
         viewPerspective = s;
     }
+    //调用接口,设置方向
 
     /** Create a board where RAWVALUES hold the values of the tiles on the board 
      * (0 is null) with a current score of SCORE and the viewing perspective set to north. */
@@ -49,7 +50,7 @@ public class Board implements Iterable<Tile> {
     /** Returns the size of the board. */
     public int size() {
         return values.length;
-    }
+    }//board的长度
 
     /** Shifts the view of the Board. */
     public void startViewingFrom(Side s) {
@@ -101,7 +102,7 @@ public class Board implements Iterable<Tile> {
             values[pcol][prow] = tile.merge(pcol, prow, tile1);
             return true;
         }
-    }
+    }//返回是不是合并了
 
     @Override
     /** Returns the board as a string, used for debugging. */

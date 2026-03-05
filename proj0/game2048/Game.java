@@ -35,6 +35,7 @@ public class Game {
             moved = false;
             while (!moved) {
                 String cmnd = _source.getKey();
+                System.out.println("我按下的键是: [" + cmnd + "]");
                 switch (cmnd) {
                     case "Quit":
                         _playing = false;
