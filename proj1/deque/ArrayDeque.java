@@ -90,22 +90,11 @@ public class ArrayDeque<T> {
     }
     private void resize(int capacity){
         T[] a = (T[])new Object[capacity];
-        if (back<front){
-            for(int i=0;i<back;i++){//back 不变
-                a[i]=array[i];
-            }
-            front=capacity-(size-front);
-            for (int i = capacity-1; i >front; i--) {
-                a[i]=array[i];
-            }
+        for (int i = 0; i < size; i++) {
+            a[i] = get(i);
         }
-        else if(back>front){
-            for(int i=front+1,j=0;i<back;i++,j++){
-                a[j]=array[i];
-            }
-            front=capacity-1;
-            back=size;
-        }
+        front =capacity-1;
+        back =size;
         array=a;
     }
 }
